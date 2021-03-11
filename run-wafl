@@ -1,0 +1,11 @@
+#!/bin/sh
+    # -cert /etc/letsencrypt/live/fish.darkk.net.ru/fullchain.pem -key /etc/letsencrypt/live/fish.darkk.net.ru/privkey.pem \
+exec ./ndt-server \
+    -cert /etc/letsencrypt/live/speed.gulag.link/fullchain.pem -key /etc/letsencrypt/live/speed.gulag.link/privkey.pem \
+    -ndt7_addr :443 \
+    -prometheusx.listen-address 127.0.50.150:9990 \
+    -ndt5_ws_addr 127.0.50.150:1235 \
+    -ndt5_wss_addr 127.0.50.150:1236 \
+    -ndt7_addr_cleartext 127.0.50.150:1237 \
+    -htmldir ./html \
+    -datadir ./ndt
