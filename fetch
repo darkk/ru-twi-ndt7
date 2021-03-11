@@ -1,0 +1,4 @@
+#!/bin/sh -ex
+
+rsync -avP wafl.darkk.net.ru:ndt/ wafl/ndt/
+rsync -avP speed-li.darkk.net.ru:ndt/ speed-li/ndt/
