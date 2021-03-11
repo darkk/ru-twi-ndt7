@@ -1,0 +1,5 @@
+#!/bin/sh -ex
+
+find wafl/ speed-li/ -type f -name '*.json.gz' -exec zcat '{}' + | jq -c '{Meta: {ServerIP, ClientIP, StartTime, EndTime, UUID: .Download.UUID}, First: .Download.ServerMeasurements | .[0].TCPInfo | {ElapsedTime, BytesAcked}, Last: .Download.ServerMeasurements | .[-1].TCPInfo | {ElapsedTime, BytesAcked}} | {Meta, First, Last, Mbit: (
+((8 * (.Last.BytesAcked - .First.BytesAcked)) / ((.Last.ElapsedTime - .First.ElapsedTime) / 1e6) / 1e6)?
+)}' | LC_ALL=C sort >ndt7-meta
