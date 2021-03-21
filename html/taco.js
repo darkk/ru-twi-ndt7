@@ -36,7 +36,7 @@
     if (e.data === "ndt7done" || e.message === "ndt7done") {
       seen += 1;
       if (seen === 1) {
-        $('#boringFrame').attr('src', 'https://speed-linode.gulag.link/ndt7.html');
+        $('#boringFrame').attr('src', 'https://speed.gulag.link/ndt7.html');
       } else if (seen === 2) {
         $('#seal').text('☑ "Термометр работает, температура обнаружена". Если "замедленный" адрес выдаёт меньше 0.15 Mbit/s, а обычный больше 1.5 Mbit/s, то можно говорить о "замедлении". Если обе цифры больше 1.5 Mbit, то "замедления" не заметно, а большая разница между ними не важна – просто термометр плавится от нагрузки.');
       }
